@@ -21,9 +21,9 @@ for val1, val2 in (list(itertools.product(Val1,Val2))):
 		for apattern, val in patterns:
 			lines[i] = re.sub(apattern, lambda x: "{}{}{}".format(x.group(1), val, x.group(2)), lines[i] )
 
-	with open("out/{}".format(os.path.basename(original).replace(".seq","{:03d}_{:03d}.seq".format(val1,val2))),"w") as f:
+	with open("out/{}".format(os.path.basename(original).replace(".seq","_{:03d}_{:03d}.seq".format(val1,val2))),"w") as f:
 		for aline in lines:
-			f.write(aline.rstrip())
+			f.write(aline)
 
 
 
