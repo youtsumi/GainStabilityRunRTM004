@@ -27,7 +27,7 @@ try:
 	seqfiles = glob.glob("/home/ccs/projects/sequencer-files/timingstudy/*.seq")
 	for aseq in seqfiles:
 		fp.changeSeq("[E2V:FP_E2V_2s_ir2_v25.seq,ITL:{}]".format(os.path.basename(aseq)))
-		time.sleep(5)
+		time.sleep(15)
 		os.system("ccs-script /home/ccs/bot-data.py /home/ccs/projects/fp-scripts-current/examples_ts8/bias.cfg")
 
 finally:
